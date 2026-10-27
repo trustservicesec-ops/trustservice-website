@@ -29,5 +29,18 @@ const menu=document.getElementById('menu');
 const nav=document.querySelector('.nav');
 if(menu&&nav){
  menu.addEventListener('click',()=>{let opened=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(opened));});
- nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  nav.classList.remove('open');
+  menu.setAttribute('aria-expanded','false');
+}));
+// Resolve page links relative to this site's directory, including GitHub Pages subpaths.
+// A delegated handler also makes navigation reliable on mobile touch browsers.
+nav.addEventListener('click',event=>{
+  const link=event.target.closest('a[href]');
+  if(!link)return;
+  const href=link.getAttribute('href');
+  if(!href || href.startsWith('#') || /^(https?:|mailto:|tel:)/i.test(href))return;
+  event.preventDefault();
+  window.location.assign(new URL(href,document.baseURI).href);
+});
 }
