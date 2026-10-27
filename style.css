@@ -89,3 +89,18 @@ button[type="submit"]:disabled{opacity:.65;cursor:wait}
   .top .hamburger {position:relative;z-index:1002;touch-action:manipulation;}
   .top .brand {pointer-events:none;}
 }
+
+/* Mobile viewport containment: avoid RTL pages rendering outside the screen. */
+html {max-width:100%;overflow-x:clip;}
+body {width:100%;max-width:100%;overflow-x:clip;}
+img,svg,video {max-width:100%;}
+@media(max-width:900px) {
+ .top {width:100%;max-width:100%;}
+ .top .nav {box-sizing:border-box;max-width:100vw;}
+ .security-hero,.about-hero,.contact-content,.contact-info {width:100%;max-width:100%;min-width:0;}
+ .security-hero > *, .about-hero > *, .contact-content > * {min-width:0;max-width:100%;}
+ .security-section,.about-wrap,.contact-container {box-sizing:border-box;width:100%;max-width:100%;min-width:0;}
+ .security-grid,.about-value-grid,.about-service-links,.quote-form,.contact-form {min-width:0;max-width:100%;}
+ .security-grid > *, .quote-form > *, .contact-form > * {min-width:0;max-width:100%;}
+ .quote-form input,.quote-form select,.quote-form textarea {min-width:0;max-width:100%;box-sizing:border-box;}
+}

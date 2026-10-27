@@ -14,3 +14,8 @@ body{background:#f4f7fb}.security-hero{display:grid;grid-template-columns:1fr 1f
  .security-grid article {padding-inline:6px;}
  .security-grid h3 {font-size:12px;}
 }
+
+/* Prevent intrinsic grid sizing from widening mobile RTL service pages. */
+.security-hero {grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+.security-hero-copy,.security-hero img {min-width:0;max-width:100%;}
+@media(max-width:800px) { .security-hero {grid-template-columns:minmax(0,1fr);} }
