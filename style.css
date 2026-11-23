@@ -107,3 +107,9 @@ img,svg,video {max-width:100%;}
 
 /* RTL overflow safeguard: hidden spam field must remain in-flow anchored, never offset thousands of pixels. */
 html[dir="rtl"] body{overflow-x:clip;}
+
+/* Selected clients: readable bilingual name cards until approved logo files are uploaded */
+.client-history h2{font-size:26px;color:#08234b}.client-history p{line-height:1.8}.client-names span{display:flex;align-items:center;justify-content:center;min-width:175px;min-height:65px;padding:15px 20px;border-radius:9px;background:#fff;border:1px solid #d7e3ef;color:#10345c;font-weight:700;box-shadow:0 2px 8px #0b2d5010}.client-history{scroll-margin-top:70px}
+
+/* Responsive, original-brand client logo gallery */
+.client-logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1040px;margin:26px auto 0}.client-card{display:flex;align-items:center;justify-content:center;min-height:116px;padding:18px;background:#fff;border:1px solid #e1e8f0;border-radius:12px;box-shadow:0 3px 12px rgba(14,42,73,.05)}.client-card img{display:block;max-width:100%;max-height:82px;width:auto;height:auto;object-fit:contain}.client-card img[hidden]{display:none}.client-card span{font-weight:700;color:#183858;text-align:center}.client-card span[hidden]{display:none}@media(max-width:700px){.client-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.client-card{min-height:90px;padding:12px}.client-card img{max-height:64px}}
